@@ -31559,21 +31559,15 @@ const { Octokit } = __nccwpck_require__(9380);
 async function run() {
   try {
     const usuario = core.getInput('usuario', { required: true });
-    const repositorio = core.getInput('repo', { required: true });
+    const repo = core.getInput('repo', { required: true });
     const org_user = core.getInput('org_user', { required: true });
     const token = process.env.GITHUB_TOKEN;
 
-    core.info(`Buscando commits de ${usuario} en ${repo}...`);
-
-//    const [owner, repoName] = repo.split('/');
-/*    if (!owner || !repoName) {
-      throw new Error('El parámetro repo debe tener el formato owner/repo.');
-    }
-*/
+    core.info(`Buscando commits de ${usuario} en ${org_user}/${repositorio}...`);
     const octokit = new Octokit({ auth: token });
     const response = await octokit.rest.repos.listCommits({
       owner: org_user,
-      repo: repositorio,
+      repo: repo,
       author: usuario,
       per_page: 100
     });
