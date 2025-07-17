@@ -1,0 +1,28 @@
+name: 'Consulta Commits Action'
+description: 'Consulta los commits de un usuario en un repositorio usando la API de GitHub.'
+author: 'manuveta'
+
+inputs:
+  usuario:
+    description: 'Usuario a buscar commits.'
+    required: true
+  org_user:
+    description: 'Organización o usuario de GitHub.'
+    required: true
+  repo:
+    description: 'Repositorio en el que se buscaran los commits.'
+    required: true
+
+outputs:
+  commits:
+    description: 'Lista de commits encontrados.'
+  count:
+    description: 'Cantidad de commits encontrados.'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'search'
+  color: 'blue'

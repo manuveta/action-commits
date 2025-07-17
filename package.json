@@ -1,0 +1,28 @@
+{
+  "name": "action-commits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build src/index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuveta/action-commits.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuveta/action-commits/issues"
+  },
+  "homepage": "https://github.com/manuveta/action-commits#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@octokit/rest": "^22.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}
