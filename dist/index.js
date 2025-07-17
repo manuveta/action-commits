@@ -31563,7 +31563,7 @@ async function run() {
     const org_user = core.getInput('org_user', { required: true });
     const token = process.env.GITHUB_TOKEN;
 
-    core.info(`Buscando commits de ${usuario} en ${org_user}/${repositorio}...`);
+    core.info(`Buscando commits de ${usuario} en ${org_user}/${repo}...`);
     const octokit = new Octokit({ auth: token });
     const response = await octokit.rest.repos.listCommits({
       owner: org_user,
