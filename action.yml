@@ -9,7 +9,7 @@ inputs:
   org_user:
     description: 'Organización o usuario de GitHub.'
     required: true
-  repo:
+  repositorio:
     description: 'Repositorio en el que se buscaran los commits.'
     required: true
 
