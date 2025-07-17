@@ -20,7 +20,7 @@ async function run() {
     const commits = response.data || [];
     core.info(`Se encontraron ${commits.length} commits.`);
 
-    // Mostrar los primeros 5 commits
+    // Mostrar los primeros 5 commit
     commits.slice(0, 5).forEach((commit, idx) => {
       core.info(`${idx + 1}. ${commit.sha}: ${commit.commit.message}`);
     });
