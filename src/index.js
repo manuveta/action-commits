@@ -10,6 +10,7 @@ async function run() {
 
     core.info(`Buscando commits de ${usuario} en ${org_user}/${repositorio}...`);
     const octokit = new Octokit({ auth: token });
+    //ejecutamos el api con octokit
     const response = await octokit.rest.repos.listCommits({
       owner: org_user,
       repo: repositorio,
@@ -17,6 +18,7 @@ async function run() {
       per_page: 100
     });
 
+    //obtenemos la respuesta
     const commits = response.data || [];
     core.info(`Se encontraron ${commits.length} commits.`);
 
@@ -24,7 +26,7 @@ async function run() {
     commits.slice(0, 10).forEach((commit, idx) => {
       core.info(`${idx + 1}. ${commit.sha}: ${commit.commit.message}`);
     });
-
+    //setear la salida de resultados
     core.setOutput('commits', JSON.stringify(commits));
     core.setOutput('count', commits.length);
   } catch (error) {
